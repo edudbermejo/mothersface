@@ -7,10 +7,35 @@ class MotherInterface extends React.Component {
     super(props)
     this.ripleyInput = React.createRef()
     this.focusOnInput = this.focusOnInput.bind(this)
+    this.handleInputKeyDown = this.handleInputKeyDown.bind(this)
   }
 
   focusOnInput() {
     this.ripleyInput.current.focus()
+  }
+
+  handleInputKeyDown(event) {
+    if(event.key === 'Enter'){
+      console.log('enter press here! ')
+    } else {
+      if(event.keyCode === 8) { // backspace
+        this.ripleyInput.current.style.width = `${(this.ripleyInput.current.value.length - 1)*0.4}em`
+      }
+      else if(this.ripleyInput.current.value.length < 40){
+        this.ripleyInput.current.style.width = `${(this.ripleyInput.current.value.length + 1)*0.4}em`
+      }
+      // if(event.keyCode === 8) { // backspace
+      //   if(this.ripleyInput.current.style.width && this.ripleyInput.current.style.width.split('calc(')[1].split('em')[0] > 0) {
+      //     this.ripleyInput.current.style.width = `calc(${this.ripleyInput.current.style.width} - 0.4em)`
+      //   }
+      // } else {
+      //   if(!this.ripleyInput.current.style.width) {
+      //     this.ripleyInput.current.style.width = '0.4em'
+      //   } else if(this.ripleyInput.current.value.length < 40){
+      //     this.ripleyInput.current.style.width = `calc(${this.ripleyInput.current.style.width} + 0.4em)`
+      //   }
+      // }
+    }
   }
 
   render() {
@@ -25,7 +50,13 @@ class MotherInterface extends React.Component {
         <div className="chat-container">
           <div className="active-line">
             <label htmlFor="ripley-input">YOU:</label>
-            <input type="textarea" name="ripley-input" ref={this.ripleyInput} autoFocus></input>
+            <input 
+              type="text" 
+              maxLength="40"
+              name="ripley-input" 
+              ref={this.ripleyInput} 
+              onKeyDown={this.handleInputKeyDown}
+              autoFocus></input>
             <span className="cursor"></span>
           </div>
         </div>
