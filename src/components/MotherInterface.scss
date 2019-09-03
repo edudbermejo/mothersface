@@ -1,24 +1,24 @@
-.App {
+.Mother-interface {
   text-align: center;
   color: greenyellow;
   background-color: black;
   min-height: 100vh;
 }
 
-.App-header,
-.App-main {
+.Mother-header,
+.Mother-main {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
 }
 
-.App-header {
+.Mother-header {
   height: 25vh;
   justify-content: center;
 }
 
-.App-logo {
+.Mother-logo {
   filter: invert(78%) sepia(89%) saturate(407%) hue-rotate(28deg) brightness(103%) contrast(101%);
   width: 6em;
   position: absolute;
@@ -26,28 +26,49 @@
   top: 1em;
 }
 
-.App-main {
+.Mother-main {
   height: 75vh;
 }
 
-.App-header h1 {
+.Mother-header h1 {
   margin-bottom: 0;
 }
 
-.App-header h2{
+.Mother-header h2{
   margin-top: 0.5em;
 }
 
 .chat-container {
   border: 1px solid greenyellow;
   margin: 1em;
-  padding: 1em;
+  padding: 0.5em 1em;
   width: 80%;
   height: 70%;
+  text-align: left;
+
+  label,
+  input {
+    font-size: 1.3em;
+  }
+
+  input {
+    background: none;
+    border: none;
+    color: greenyellow;
+    font-family: inherit;
+    text-transform: uppercase;
+    outline: none;
+    caret-color: transparent;
+  }
+}
+
+.active-line {
+  display: flex;
+  align-items: center;
 }
 
 .cursor {
-  animation: Cursor-blink infinite 1.5s;
+  animation: Cursor-blink infinite 1s;
   height: 1em;
   width: 0.7em;
   content: "";

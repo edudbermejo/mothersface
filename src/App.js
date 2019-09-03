@@ -1,22 +1,15 @@
 import React from 'react';
-import './App.css';
-import logo from './nostromo.png';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>MU/TH/UR</h1>
-        <h2>6000</h2>
-        <img src={logo} className="App-logo" />
-      </header>
-      <main class="App-main">
-        <div class="chat-container">
-          <span class="cursor"></span>
-        </div>
-      </main>
-    </div>
-  );
+import MotherInterface from './components/MotherInterface';
+
+class App extends React.Component {
+  render() {
+    return (
+    <Router>
+      <Route exact path="/" component={MotherInterface} />
+    </Router>
+    )};
 }
 
 export default App;
