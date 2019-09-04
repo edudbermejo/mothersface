@@ -1,0 +1,1 @@
+ - fix behaviour when the pressed key doesn't input a character

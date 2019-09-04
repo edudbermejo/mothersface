@@ -48,7 +48,7 @@ class MotherInterface extends React.Component {
               maxLength="40"
               name="ripley-input" 
               ref={this.ripleyInput} 
-              onKeyDown={this.handleInputKeyDown}
+              onKeyUp={this.handleInputKeyDown}
               onMouseDown={this.preventDefaultBehaviour}
               autoFocus></input>
             <span className="cursor"></span>
