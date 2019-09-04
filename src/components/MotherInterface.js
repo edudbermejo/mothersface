@@ -14,6 +14,10 @@ class MotherInterface extends React.Component {
     this.ripleyInput.current.focus()
   }
 
+  preventDefaultBehaviour(event) {
+    event.preventDefault()
+  }
+
   handleInputKeyDown(event) {
     if(event.key === 'Enter'){
       console.log('enter press here! ')
@@ -24,17 +28,6 @@ class MotherInterface extends React.Component {
       else if(this.ripleyInput.current.value.length < 40){
         this.ripleyInput.current.style.width = `${(this.ripleyInput.current.value.length + 1)*0.4}em`
       }
-      // if(event.keyCode === 8) { // backspace
-      //   if(this.ripleyInput.current.style.width && this.ripleyInput.current.style.width.split('calc(')[1].split('em')[0] > 0) {
-      //     this.ripleyInput.current.style.width = `calc(${this.ripleyInput.current.style.width} - 0.4em)`
-      //   }
-      // } else {
-      //   if(!this.ripleyInput.current.style.width) {
-      //     this.ripleyInput.current.style.width = '0.4em'
-      //   } else if(this.ripleyInput.current.value.length < 40){
-      //     this.ripleyInput.current.style.width = `calc(${this.ripleyInput.current.style.width} + 0.4em)`
-      //   }
-      // }
     }
   }
 
@@ -56,6 +49,7 @@ class MotherInterface extends React.Component {
               name="ripley-input" 
               ref={this.ripleyInput} 
               onKeyDown={this.handleInputKeyDown}
+              onMouseDown={this.preventDefaultBehaviour}
               autoFocus></input>
             <span className="cursor"></span>
           </div>
