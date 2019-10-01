@@ -1,0 +1,97 @@
+.Mother-interface {
+  text-align: center;
+  color: greenyellow;
+  background-color: black;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+}
+
+.Mother-header,
+.Mother-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Mother-header {
+  height: 25vh;
+  justify-content: center;
+}
+
+.Mother-logo {
+  filter: invert(78%) sepia(89%) saturate(407%) hue-rotate(28deg) brightness(103%) contrast(101%);
+  width: 6em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+.Mother-main {
+  height: 75vh;
+}
+
+.Mother-header h1 {
+  margin-bottom: 0;
+}
+
+.Mother-header h2{
+  margin-top: 0.5em;
+}
+
+.chat-container {
+  border: 1px solid greenyellow;
+  margin: 1em;
+  padding: 0.5em 1em;
+  width: 80%;
+  height: 70%;
+  text-align: left;
+
+  label,
+  input,
+  span {
+    font-size: 1.3em;
+  }
+
+  span.whole-width {
+    display: block;
+  }
+
+  input {
+    background: none;
+    border: none;
+    color: greenyellow;
+    font-family: inherit;
+    text-transform: uppercase;
+    outline: none;
+    caret-color: transparent;
+    width: 0;
+    margin-left: 0.2em;
+  }
+}
+
+.active-line {
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  animation: Cursor-blink infinite 1s;
+  height: 0.8em;
+  width: 0.5em;
+  content: "";
+  display: block;
+  background-color: greenyellow;
+}
+
+@keyframes Cursor-blink {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
